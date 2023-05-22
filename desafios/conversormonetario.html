@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSOR MONETÁRIO</title>
+    <style>
+         body {font: 12pt Arial;}
+        button{ font-size: 12pt; padding:30px;}
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &#x27A1; $</h1>
+    <button onclick="inicio()">Converter</button>
+    <section id="resultado">
+    </section>
+
+    <script>
+        let cotacao = Number(window.prompt('Antes de mais nada, quanto está a cotação do dólar hoje?'))
+
+        function inicio() {
+        let reais = Number(window.prompt('Quantos reais você tem na sua carteira?'))
+
+        let dolar = reais / cotacao
+
+        let res = window.document.getElementById('resultado')
+        res.innerHTML = `Você tem R$ ${reais.toFixed(2)} na sua carteira. 
+        Com R$ ${reais.toFixed(2)} você consegue comprar $ ${dolar.toFixed(2)} dólares.`
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSOR DE MEDIDAS</title>
+    <style>
+      body {font: 12pt Arial;}
+       button{ font-size: 12pt; padding:30px;} 
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="inicio()">Converter</button>
+    <section class="medidas">
+        <div id="distancia"></div>
+        <div id="quilometro"></div>
+        <div id="hectomero"></div>
+        <div id="decametro"></div>
+        <div id="decimetro"></div>
+        <div id="centimetro"></div>
+        <div id="milimetro"></div>
+    </section>
+    <script>
+        let msg_distancia = window.document.getElementById("distancia")
+        let msg_km = window.document.getElementById('quilometro')
+        let msg_hect = window.document.getElementById('hectomero')
+        let msg_decam = window.document.getElementById('decametro')
+        let msg_deci = window.document.getElementById('decimetro')
+        let msg_cent = window.document.getElementById('centimetro')
+        let msg_mili = window.document.getElementById('milimetro')
+
+function inicio() {
+    let num = Number(window.prompt('Digite uma distância em metros (m):'))
+
+    msg_distancia.innerHTML = (`A distância de <strong>${num}</strong> metros, corresponde a ..`)
+
+    let quilometro = num / 1000
+    let hectare = num / 100
+    let decametro = num / 10
+    let decimetro = num * 10
+    let centimetro = num * 100
+    let milimetro = num * 1000
+
+    msg_km.innerHTML = (`${quilometro} quilômetros (km)`)
+    msg_hect.innerHTML = (`${hectare} hectômetros (Hm)`)
+    msg_decam.innerHTML = (`${decametro} decâmetros (Dam)`)
+    msg_deci.innerHTML = (`${decimetro} decímetros (dm)`)
+    msg_cent.innerHTML = (`${centimetro} centímetros (cm)`)
+    msg_mili.innerHTML = (`${milimetro} milímetros (mm)`)
+
+}
+
+    </script>
+
+</body>
+</html>
